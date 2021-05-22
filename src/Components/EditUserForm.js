@@ -1,14 +1,11 @@
-import {React, useState} from 'react';
+import React, {useState} from 'react'
 
-import { addUser } from '../actions/userActions';
-import { connect } from 'react-redux'
-
- function UserForm(props) {
+function EditUserForm(props) {
     const [state, setState] = useState({
-        Username: "",
-        Email: "",
-        Country: "",
-        Password: ""
+        username: props.user.username,
+        email: props.user.email,
+        country: props.user.country,
+        password: props.user.password
     })
     
     function handleonChange(event){
@@ -18,17 +15,15 @@ import { connect } from 'react-redux'
     }
 
     function handleonSubmit(){
-        let userId = 10000 + Math.random()*10000000;
-        let user = {...state, id: userId}
-        props.addNewUser(user)
+        let user = {...state, id: props.user.id};
+        props.updateUser(props.user.id, user);
+        props.hideModal()
 
     }
-
-
-
+    console.log('edit',props.user);
     return (
         <div>
-            <div>
+             <div>
                 <label className="">Username</label><br></br>
                 <input type="text" value={state.username} name="username" onChange={handleonChange}></input>
             </div>
@@ -48,11 +43,10 @@ import { connect } from 'react-redux'
                 <input type="password" value={state.password} name="Password" onChange={handleonChange}></input>
             </div>
 
-            <button type="button" onClick={handleonSubmit}>Create User</button>
+            <button type="button" onClick={handleonSubmit}>Update User</button>
+            
         </div>
     )
 }
 
-const mapDispatchToProps = {addNewUser: addUser}
-
-export default connect(null, mapDispatchToProps) (UserForm);
+export default EditUserForm
