@@ -1,4 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+
+import { connect } from 'react-redux';
+import { updateUser } from '../actions/userActions';
 
 function EditUserForm(props) {
     const [state, setState] = useState({
@@ -49,4 +52,10 @@ function EditUserForm(props) {
     )
 }
 
-export default EditUserForm
+let mapDispatchToProps = {
+    updateUser
+}
+
+let mapStateToProps = () => {}
+
+export default connect(mapStateToProps, mapDispatchToProps) (EditUserForm);
