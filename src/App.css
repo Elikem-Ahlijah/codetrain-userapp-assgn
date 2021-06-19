@@ -1,7 +1,28 @@
 .App {
   text-align: center;
-  padding-top: 2em;
+  
 }
+
+.form {
+  
+  height: 100vh;
+  background-color:burlywood;
+
+}
+
+.button {
+  margin: 2px;
+}
+
+.item {
+  border: 1px solid gray;
+  border-radius: 5px, 5px;
+  background-color: honeydew;
+  margin: 10px;
+  background-color:rgb(216, 150, 65)
+
+}
+
 
 
 

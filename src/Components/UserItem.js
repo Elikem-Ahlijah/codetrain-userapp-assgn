@@ -17,22 +17,22 @@ function UserItem (props){
     }
 
     return(
-        <div className="row">
+        <div className="row item">
             <div className="col-md-3">{props.user.username}</div>
             <div className="col-md-3">{props.user.email}</div>
             <div className="col-md-2">{props.user.country}</div>
             <div className="col-md-4">
-                <button onClick={showModal}>Edit</button>
+                <button className='button' onClick={showModal}>Edit</button>
 
                 <Modal show={isModalVisible} onHide={hideModal}>
                     <Modal.Header closeButton>
                         <Modal.Title>Edit User</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <EditUserForm hideModal={hideModal} user={props.user} updateUser={props.updateUser}/>
+                        <EditUserForm hideModal={hideModal} user={props.user} />
                     </Modal.Body>
                 </Modal>
-                <button  
+                <button className='button'  
                     onClick={()=>{
                         props.deleteUser(props.user.id)
                     }}>Delete</button>
@@ -41,7 +41,7 @@ function UserItem (props){
     )
 }
 
-let mapDispatchToProps = {deleteUser}
+let mapDispatchToProps = {deleteUser:deleteUser}
 
 let mapStateToProps = () =>{}
 export default connect(mapStateToProps, mapDispatchToProps) (UserItem);

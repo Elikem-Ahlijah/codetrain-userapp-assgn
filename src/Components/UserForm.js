@@ -5,10 +5,10 @@ import { connect } from 'react-redux'
 
  function UserForm(props) {
     const [state, setState] = useState({
-        Username: "",
-        Email: "",
-        Country: "",
-        Password: ""
+        username: "",
+        email: "",
+        country: "",
+        password: ""
     })
     
     function handleonChange(event){
@@ -45,7 +45,7 @@ import { connect } from 'react-redux'
 
             <div>
                 <label>Password</label><br></br>
-                <input type="password" value={state.password} name="Password" onChange={handleonChange}></input>
+                <input type="password" value={state.password} name="password" onChange={handleonChange}></input>
             </div>
 
             <button type="button" onClick={handleonSubmit}>Create User</button>
