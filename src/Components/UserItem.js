@@ -41,7 +41,7 @@ function UserItem (props){
     )
 }
 
-let mapDispatchToProps = {deleteUser:deleteUser}
+let mapDispatchToProps = {deleteUser,}
 
 let mapStateToProps = () =>{}
 export default connect(mapStateToProps, mapDispatchToProps) (UserItem);

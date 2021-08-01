@@ -23,7 +23,7 @@ function Userlist (props){
 
 
 function mapStateToProps (state) {
-  return {usersData: state.users}
+  return {usersData: state.userState.users}
 }
 
 const mapDispatchToProps = {
