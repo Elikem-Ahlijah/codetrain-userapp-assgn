@@ -1,3 +1,4 @@
+import '../App.css'
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import {signup} from '../actions/authActions';
@@ -26,7 +27,7 @@ function Signup(props) {
     }
     
     return (
-        <div>
+        <div className='container-flex App form'>
             <Link to="/">Home</Link>
             <Link to="/login">Login</Link>
             <Link to="/signup">Signup</Link>
